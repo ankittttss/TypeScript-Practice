@@ -13,7 +13,7 @@ printIngredient("a", "b", "c");
 
 interface User {
   id: string;
-  name: string;
+  namee: string;
   info?: {
     email?: string;
   };

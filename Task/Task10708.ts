@@ -17,5 +17,6 @@ function upateeObject<T,K extends keyof T>(user:T,key:K,value:T[K]):T{
 }
 
 const obj1 = {a:1,b:"hello",c:true};
+// not correct
 const updated1 = upateeObject(obj1,'b',"world");
 console.log(updated1)

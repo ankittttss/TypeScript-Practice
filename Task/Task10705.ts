@@ -26,39 +26,39 @@
 
 type AnyObj = Record<string, any>;
 
-function check(item: any): item is AnyObj{
-  return item && typeof item === "object" && !Array.isArray(item);
-}
+// function checkk(item: any): item is AnyObj{
+//   return item && typeof item === "object" && !Array.isArray(item);
+// }
 
-function dmerge<T extends AnyObj, U extends AnyObj>(
-  target: T,
-  Source: U
-): T & U { 
-  const output: AnyObj = { ...target }; // Shallow Copy
-  if (check(target) && check(Source)) {
-    for (const key in Source) {
-      if (Source.hasOwnProperty(key)) {
-        if (check(Source[key])) {
-          if (!(key in target)) {
-            output[key] = Source[key];
-            // console.log(output[key])
-          } else {
-            output[key] = dmerge(target[key],Source[key])
-            // console.log(output[key])
-          }
-        } else {
-          output[key] = Source[key];
-        //   console.log(Source[key])
-        }
-      }
-    }
-  }
-  return output as T & U;
-}
+// function dmerge<T extends AnyObj, U extends AnyObj>(
+//   target: T,
+//   Source: U
+// ) {  // intersection of both objects
+//   const output: T & U = { ...target }; // Shallow Copy
+//   if (checkk(target) && checkk(Source)) { // to check whether both are objects
+//     for (const key in Source) {
+//       if (Source.hasOwnProperty(key)) {
+//         if (check(Source[key])) {
+//           if (!(key in target)) {
+//             output[key] = Source[key];
+//             // console.log(output[key])
+//           } else {
+//             output[key] = dmerge(target[key],Source[key]);
+//             // console.log(output[key])
+//           }
+//         } else {
+//           output[key] = Source[key];
+//         //   console.log(Source[key])
+//         }
+//       }
+//     }
+//   }
+//   return output ;
+// }
 
 // Example usage:
 const obj11 = { a: 1, b: { c: 2 } };
 const obj2 = { b: { d: 3 }, e: 4 };
 
-const merged = dmerge(obj11, obj2);
-console.log(merged);
+// const merged = dmerge(obj11, obj2);
+// console.log(merged);

@@ -84,3 +84,10 @@ type DescribableFunction = {
  // Optional Parameters
 
  // Function Overloading//
+
+ function makeDate(timestamp:number):Date;
+ function makeDate(m:number,n:number,y:number):Date
+ function makeDate(timestamp:number,n?:number):Date{
+     return new Date()
+ }
+//---------------------

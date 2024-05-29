@@ -51,5 +51,3 @@ type NullableProperties<T> = {
 
 // type DefinedUser1 = DefineProperties<User>
 type DefinedUser4 = NullableProperties<User>
-
-

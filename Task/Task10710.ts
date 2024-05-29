@@ -30,4 +30,6 @@ interface User2 {
 }
 
 type DefinedUser = DefineddProperties<User2>;
+
+/// what about nested ?
 type answer = DefinedProperties<User>;

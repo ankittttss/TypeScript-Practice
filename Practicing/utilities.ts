@@ -50,3 +50,33 @@
 // read about the generic,
 /// imp....
 
+//---------------------------Records-----------------------------------//
+
+interface CatInfo{
+    age:number,
+    breed:string
+}
+
+// type CatName = "miffy"|"Margreita"|"Ravish"
+
+// const Cat:Record<CatName,CatInfo> = {
+//     miffy :{age:10,breed}
+// }
+
+//--------------Omit-----------------------------------------------------//
+
+interface Todo{
+    name:string;
+    title:string;
+    description:string;
+    completed:boolean;
+    createdAt:number
+}
+
+type TodoPreview = Omit<Todo,"name"|"title">
+
+const todo: TodoPreview = {
+    description:"dnfjd",
+    completed: false,
+    createdAt: 1615544252770,
+  };
